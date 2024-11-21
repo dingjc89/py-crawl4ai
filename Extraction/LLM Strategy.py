@@ -27,10 +27,10 @@ async def extract_with_retry(crawler, url, extraction_strategy):
 
 
 async def main():
-    async with AsyncWebCrawler(verbose=True) as crawler:
+    async with AsyncWebCrawler(verbose=False) as crawler:
         strategy = LLMExtractionStrategy(
-                provider="ollama/gemma2:27b",
-                instruction="抓取产品名称、产品价格、产品描述内容，返回json格式为：[{'product_name':'ali product', 'product_price':19.99, "
+                provider="ollama/llama3.2",
+                instruction="抓取产品名称、价格、描述内容，返回json格式为：[{'product_name':'ali product', 'product_price':19.99, "
                             "'product_description':'ali product description'}]",
                 # instruction="获取分类下的商品信息、评论信息、相关商品信息等,并且返回的json格式为：[{\"category_name\":\"Electronics\","
                 #             "\"products\":[{\"name\":\"Smartphone"
